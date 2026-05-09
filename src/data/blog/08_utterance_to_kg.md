@@ -1,10 +1,13 @@
 ---
 title: "What Are You Talking About?"
+subtitle: "Translating Sentences into Knowledge Graphs"
 pubDatetime: 2026-04-07
 description: "A knowledge graph doesn't understand questions — it speaks a different language. Explore two approaches to bridging the gap: entity linking and semantic retrieval."
 tags: ["graphs", "generative-ai", "machine-learning", "information-retrieval", "entity-linking", "semantic-search", "knowledge-graph", "graphrag"]
 series: "Graphs × GenAI"
 seriesPart: 2
+ogImage: ../../assets/images/08_utterance_to_kg/08_cover_1600x840.png
+slug: what-are-you-talking-about
 ---
 
 **"What are you talking about?"**
@@ -17,11 +20,9 @@ Yet, it doesn't understand.
 
 Which is a bit embarrassing, because [we built the graph from text](https://storiesinstructure.com/stories-in-structure-as-a-knowledge-graph) — specifically, my 2025 blog posts. But while the graph remembers entities and relationships between them, it doesn't naturally know what to do with a fresh sentence dropped in front of it.
 
-![A cyberpunk city scene: a graph character facing a sentence character, clearly failing to understand each other](https://cdn.hashnode.com/uploads/covers/68c1f8825145eb977febb99d/2e8cc4c7-dc6e-4aca-a601-1247763eda8b.png align="center")
-
 On one side we have a graph, like this conceptual graph below with red nodes depicting posts, green nodes depicting introduced concepts, and blue nodes marking abstractions.
 
-![Conceptual graph of my 2025 blog posts](https://cdn.hashnode.com/uploads/covers/68c1f8825145eb977febb99d/c0b03a3a-51ca-4f98-9653-d24be17d3fac.png align="center")
+![Conceptual graph of my 2025 blog posts](/images/08_utterance_to_kg/conceptual_abstracted.png)
 
 *Figure 1. Conceptual graph of my 2025 blog posts.*
 
@@ -41,11 +42,9 @@ Let's apply the same process to this question: **"What problem does Euler's theo
 
 Three entities are found:
 
-*   Euler's Theorem (Concept)
-    
-*   Problem Solved By Euler's Theorem (Abstraction)
-    
-*   Constraint That Makes It Solvable (Abstraction)
+* Euler's Theorem (Concept)
+* Problem Solved By Euler's Theorem (Abstraction)
+* Constraint That Makes It Solvable (Abstraction)
     
 
 * * *
@@ -70,33 +69,20 @@ I set the prompt to: *"Given the following user question and a list of knowledge
 
 **Found Entities:**
 
-*   Euler's Theorem (Concept)
+* Euler's Theorem (Concept)  
+* Eulerian Path (Concept)  
+* Traversal (Concept)  
+* Single Stroke (Concept)  
+* Graph (Concept)  
+* Vertex (Concept)  
+* Edge (Concept)  
+* Undirected Graph (Concept)  
+* Node Degree (Concept)  
+* Odd Degree (Concept)  
+* Even Degree (Concept)  
+* abstract:Graph-Theoretic Properties and Degrees (Concept)  
+* abstract:Graph and Network Structures (Abstraction)
     
-*   Eulerian Path (Concept)
-    
-*   Traversal (Concept)
-    
-*   Single Stroke (Concept)
-    
-*   Graph (Concept)
-    
-*   Vertex (Concept)
-    
-*   Edge (Concept)
-    
-*   Undirected Graph (Concept)
-    
-*   Node Degree (Concept)
-    
-*   Odd Degree (Concept)
-    
-*   Even Degree (Concept)
-    
-*   abstract:Graph-Theoretic Properties and Degrees (Concept)
-    
-*   abstract:Graph and Network Structures (Abstraction)
-    
-
 * * *
 
 At this point we can have reasonable faith that these entities actually exist in the graph — the LLM is selecting from a known list rather than inventing names.
@@ -123,8 +109,7 @@ Result:
 
 **Found Entities:**
 
-*   Euler's Theorem (Concept)
-    
+* Euler's Theorem (Concept)
 
 * * *
 
@@ -142,11 +127,11 @@ Following the GraphRAG community and, specifically, [LangChain's implementation 
 
 1.  Encode all graph entities into embeddings (numeric vectors that capture meaning).
     
-    ![](https://cdn.hashnode.com/uploads/covers/68c1f8825145eb977febb99d/8a2ee654-f74f-460c-b5b8-a17e0c4d2405.png align="center")
+    ![](/images/08_utterance_to_kg/mermaid-diagram.png)
     
 2.  Embed a question
     
-    ![](https://cdn.hashnode.com/uploads/covers/68c1f8825145eb977febb99d/997a6498-ae5d-4b4d-aa3c-1e1589cb44db.png align="center")
+    ![](/images/08_utterance_to_kg/mermaid-diagram_question.png)
     
 3.  Calculate distance in meaning (i.e., semantic distance) between entities embeddings and the question embedding.
     
@@ -161,24 +146,19 @@ So what are those **closest entities to our question**?
 
 **Top 5 Entities with similarity scores:**
 
-*   Euler's Question (Concept) - 0.599
-    
-*   Euler's Recipe (Concept) - 0.583
-    
-*   Euler's Theorem (Concept) - 0.580
-    
-*   Leonhard Euler (Concept) - 0.544
-    
-*   Euler 1735 Result (Abstraction) - 0.531
+* Euler's Question (Concept) - 0.599
+* Euler's Recipe (Concept) - 0.583
+* Euler's Theorem (Concept) - 0.580
+* Leonhard Euler (Concept) - 0.544
+* Euler 1735 Result (Abstraction) - 0.531
     
 
 * * *
 
 We now have two fundamentally different ways to enter the graph:
 
-*   map the question to known entities (entity linking)
-    
-*   or map it to similar meaning (semantic retrieval)
+* map the question to known entities (entity linking)
+* or map it to similar meaning (semantic retrieval)
     
 
 They both produce entry points into the graph, but they get there differently. Entity linking tries to understand the question literally — and will either be too strict or too eager. Semantic retrieval doesn't try to understand the question at all; it just asks "what in the graph feels like this?"

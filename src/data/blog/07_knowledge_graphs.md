@@ -5,6 +5,7 @@ description: "What if my 2025 blog posts became a knowledge graph? An exploratio
 tags: ["graphs", "generative-ai", "graph-theory", "information-retrieval", "knowledge-graph", "graphrag"]
 series: "Graphs × GenAI"
 slug: stories-in-structure-as-a-knowledge-graph
+ogImage: ../../assets/images/07_knowledge_graphs/philosopheer_1600x840.png
 ---
 
 ## **Your *Stories in Structure* Wrapped 2025**
@@ -142,7 +143,7 @@ For each ontology I got a graph. Knowing that my posts discussed intertwined ide
 
 To my surprise, I saw very little of these connections in the conceptual graph (Fig. 1)!
 
-![Visualization of a clustered network graph with dense star-like communities connected by cross-links. Green edges connect numerous small nodes to central hub nodes, while red edges highlight radial structures within each cluster. Labels indicate the most common nodes: “node”, “edge", and a duplicated node "nodes". ](https://cdn.hashnode.com/uploads/covers/68c1f8825145eb977febb99d/846d853c-df61-4d9e-9302-40942b875d3b.png align="center")
+![Visualization of a clustered network graph with dense star-like communities connected by cross-links. Green edges connect numerous small nodes to central hub nodes, while red edges highlight radial structures within each cluster. Labels indicate the most common nodes: “node”, “edge", and a duplicated node "nodes". ](/images/07_knowledge_graphs/conceptual_raw2.png)
 
 *Figure 1. Knowledge graph constructed with conceptual ontology from my 2025 blog posts. Nodes: red - posts, green - concepts, blue - abstractions*.
 
@@ -156,15 +157,15 @@ The second problem I spotted are blue `Abstraction` nodes that are floating arou
 
 Having `Abstraction` nodes floating around means they can’t be reached from a post or concept during traversal.
 
-![Visualization of the conceptual graph with floating Abstraction nodes highlighted with cyan bounding boxes. Takeaway: The majority of abstractions are disconnected from the main graph component.](https://cdn.hashnode.com/uploads/covers/68c1f8825145eb977febb99d/177a2cce-01c6-4bed-8a46-d388e76b5128.png align="center")
+![Visualization of the conceptual graph with floating Abstraction nodes highlighted with cyan bounding boxes. Takeaway: The majority of abstractions are disconnected from the main graph component.](/images/07_knowledge_graphs/conceptual_deduplicated_floatingabstractions.png)
 
 *Figure 2. Most of the* `Abstraction` *nodes in the conceptual graph (marked with cyan boxes) are disconnected from the main graph component.*
 
 * * *
 
-Before we move on, let's have a look at the narrative graph (Fig. 2), because it is even more disconnected. The graph is made of five large **components** (i.e. parts of a graph that are fully separated from the rest of the graph) and three disconnected nodes (which, technically, are also graph components).
+Before we move on, let's have a look at the narrative graph (Fig. 3), because it is even more disconnected. The graph is made of five large **components** (i.e. parts of a graph that are fully separated from the rest of the graph) and three disconnected nodes (which, technically, are also graph components).
 
-![Visualization of a clustered network graph with dense star-like communities connected by cross-links. Edges connect numerous small nodes to central hub nodes, while edges highlight radial structures within each cluster. ](https://cdn.hashnode.com/uploads/covers/68c1f8825145eb977febb99d/f40813d3-ca0d-4832-b767-d60622b9500b.png align="center")
+![Visualization of a clustered network graph with dense star-like communities connected by cross-links. Edges connect numerous small nodes to central hub nodes, while edges highlight radial structures within each cluster. ](/images/07_knowledge_graphs/narrative_raw.png)
 
 *Figure 3. Knowledge graph constructed with narrative ontology from my 2025 blog posts. Nodes: red - posts, green - problems, cyan - tensions, purple - resolution.*
 
@@ -172,7 +173,7 @@ Before we move on, let's have a look at the narrative graph (Fig. 2), because it
 
 Zooming into one post, [Climbing Routes are Graphs](https://storiesinstructure.com/climbing-routes-are-graphs), there were four (green) problems identified, each producing its (cyan) tension, and resolved with a (purple) resolution.
 
-![Network visualization of the narrative graph around the "Climbing Routes are Graphs" post node. Node colors: red - post, green - problem, cyan - tension, purple - resolution. Takeaways: the post has four independent cycles of Problem -> Tension -> Resolution.](https://cdn.hashnode.com/uploads/covers/68c1f8825145eb977febb99d/5d64bef9-5656-4074-a556-1c51f665a969.png align="center")
+![Network visualization of the narrative graph around the "Climbing Routes are Graphs" post node. Node colors: red - post, green - problem, cyan - tension, purple - resolution. Takeaways: the post has four independent cycles of Problem -> Tension -> Resolution.](/images/07_knowledge_graphs/narrative_one_example2.png)
 
 *Figure 4. Narrative graph component of the "Climbing Routes Are Graphs" post. Nodes: red - post, green - problem, cyan - tension, purple - resolution.*
 
@@ -190,7 +191,7 @@ This process is called [entity resolution](https://en.wikipedia.org/wiki/Record_
 
 What is the visual effect of this canonicalization?
 
-![Network visualization of the conceptual graph. Node colors: red - post, green - concept, blue - abstraction. Takeaway: graph is made of five large components that are connected by common concepts.](https://cdn.hashnode.com/uploads/covers/68c1f8825145eb977febb99d/f3f962ee-7f77-44fd-97cd-777324d2fe3b.png align="center")
+![Network visualization of the conceptual graph. Node colors: red - post, green - concept, blue - abstraction. Takeaway: graph is made of five large components that are connected by common concepts.](/images/07_knowledge_graphs/conceptual_deduplicated2.png)
 
 *Figure 5. Canonicalized knowledge graph constructed with conceptual ontology from my 2025 blog posts. Nodes: red - posts, green - concepts, blue - abstractions*.
 
@@ -208,7 +209,7 @@ Waypoint ← Waypoint, Waypoints, Named Waypoints
 
 The narrative graph has also improved. Posts share either a tension or a resolution, and in some cases tensions have been unified into one. For example, in [How to Solve a House Puzzle](https://storiesinstructure.com/how-to-solve-the-house-puzzle), the problem of drawing a house and the problem of finding a route through all the bridges of Königsberg lead to the same tension of "Existence of an Euler Path in the Graph".
 
-![Visualization of the narrative graph. Takeaway: deduplication revealed the tension shared by two posts.](https://cdn.hashnode.com/uploads/covers/68c1f8825145eb977febb99d/4877ea8e-3a10-4402-bc3b-054df656b26f.png align="center")
+![Visualization of the narrative graph. Takeaway: deduplication revealed the tension shared by two posts.](/images/07_knowledge_graphs/narrative_one_example_deduplicated2.png)
 
 *Figure 6. Canonicalized narrative graph neighborhood of the "Climbing Routes Are Graphs" post node. Nodes: red - post, green - problem, cyan - tension, purple - resolution.*
 
@@ -228,7 +229,7 @@ Are these groups **visible in the structure of the graph** itself?
 
 I applied Louvain community detection algorithm [\[3\]](https://www.nature.com/articles/s41598-019-41695-z) (community = dense group of nodes), and handed the results over to the LLM to summarize. That resulted in 61 communities being found in the conceptual graph:
 
-![Communities visualization in the conceptual graph. Takeaway: communities do not overlap between the graphs.](https://cdn.hashnode.com/uploads/covers/68c1f8825145eb977febb99d/e04468db-2e85-4eea-95ed-714cabc8018e.png align="center")
+![Communities visualization in the conceptual graph. Takeaway: communities do not overlap between the graphs.](/images/07_knowledge_graphs/conceptual_communities2.png)
 
 *Figure 7. Communities detected in the canonicalized conceptional graph. 337 Concept nodes and 30 Abstraction nodes were grouped into 61 communities, ranging from one member to the maximum of 35 nodes (Community 6).*
 
@@ -244,16 +245,12 @@ This community links concepts from graph theory—especially Eulerian paths, nod
 
 In the narrative graph, nodes associated with the "Climbing Routes are Graphs" post, form four communities concentrated around four different areas:
 
-*   Community 0 (3 members) ​ models a rock climbing route as a graph problem
-    
-*   Community 1 (7 members) ​ centers on understanding and determining the existence of an Eulerian path in a graph
-    
-*   Community 2 (3 members) ​ frames climbing as the process of turning an abstract graph of possible movements into a concrete path
-    
-*   Community 3 (3 members) ​represents the modeling of visual data as sparse graphs
-    
+* Community 0 (3 members) ​ models a rock climbing route as a graph problem
+* Community 1 (7 members) ​ centers on understanding and determining the existence of an Eulerian path in a graph  
+* Community 2 (3 members) ​ frames climbing as the process of turning an abstract graph of possible movements into a concrete path  
+* Community 3 (3 members) ​represents the modeling of visual data as sparse graphs    
 
-![Communities visualization of the narrative graph around the "Climbing Routes are Graphs" blog post. Takeaway: there are four distinct communities.](https://cdn.hashnode.com/uploads/covers/68c1f8825145eb977febb99d/272cc482-b4de-4499-910b-791ed468e008.png align="center")
+![Communities visualization of the narrative graph around the "Climbing Routes are Graphs" blog post. Takeaway: there are four distinct communities.](/images/07_knowledge_graphs/narrative_one_example_communities2.png)
 
 *Figure 8. Four communities detected in the neighborhood of the "Climbing Routes Are Graphs" post node, in the canonicalized narrative graph.*
 
@@ -273,11 +270,9 @@ Let me cite myself :D
 
 What that means is that:
 
-*   "eye scanpath" IS A "directed graph"
-    
-*   "directed path graph" IS A "directed graph"
-    
-*   but if I never said it explicitly in the text, the connection will NOT appear in the graph.
+* "eye scanpath" IS A "directed graph"
+* "directed path graph" IS A "directed graph"  
+* but if I never said it explicitly in the text, the connection will NOT appear in the graph.
     
 
 It is telling us something: **the hierarchy doesn't live in the text.**
@@ -296,7 +291,7 @@ The problem originated in the conceptual ontology, but actually it is easier to 
 
 For three separate `Problem` nodes related to sparse spatial graphs, we got a new `Problem` super-node "Sparse graphs, point clouds, and spatial neighborhoods", that generalizes these three problems and also creates a new link between two posts.
 
-![Visualization of problem super-nodes in the narrative graph. Takeaway: super-nodes group together multiple problems, making a link between posts.](https://cdn.hashnode.com/uploads/covers/68c1f8825145eb977febb99d/9509e02e-d353-4355-a2e7-c0bb3f6fd901.png align="center")
+![Visualization of problem super-nodes in the narrative graph. Takeaway: super-nodes group together multiple problems, making a link between posts.](/images/07_knowledge_graphs/narrative_abstraction_problem2.png)
 
 *Figure 9. Problems (round green nodes) and super-problems (rhombus green nodes) in the narrative graph, showing that several problems are sub-problems of a broader one. A broader problem may be discussed by more than one post (red nodes).*
 
@@ -304,7 +299,7 @@ For three separate `Problem` nodes related to sparse spatial graphs, we got a ne
 
 Similarly, for six separate `Resolution`nodes, we got a new `Resolution`super-node "Graph theory and path representations", that generalizes these six resolutions and also creates a new link between four posts.
 
-![Visualization of resolution super-nodes in the narrative graph. Takeaway: in an extreme case four posts' resolutions have a common hypernym.](https://cdn.hashnode.com/uploads/covers/68c1f8825145eb977febb99d/97b4c2b4-047f-481d-b3df-7f4ed44a3743.png align="center")
+![Visualization of resolution super-nodes in the narrative graph. Takeaway: in an extreme case four posts' resolutions have a common hypernym.](/images/07_knowledge_graphs/narrative_abstraction_resolution2.png)
 
 *Figure 10. Resolutions (round purple nodes) and super-resolutions (rhombus purple nodes) in the narrative graph, showing that several resolutions are sub-resolutions of a broader one. A broader resolution may release tensions that arose in more than one post (red nodes).*
 
