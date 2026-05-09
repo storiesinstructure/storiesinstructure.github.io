@@ -1,9 +1,360 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
-    <path d="M50.4 78.5a75.1 75.1 0 0 0-28.5 6.9l24.2-65.7c.7-2 1.9-3.2 3.4-3.2h29c1.5 0 2.7 1.2 3.4 3.2l24.2 65.7s-11.6-7-28.5-7L67 45.5c-.4-1.7-1.6-2.8-2.9-2.8-1.3 0-2.5 1.1-2.9 2.7L50.4 78.5Zm-1.1 28.2Zm-4.2-20.2c-2 6.6-.6 15.8 4.2 20.2a17.5 17.5 0 0 1 .2-.7 5.5 5.5 0 0 1 5.7-4.5c2.8.1 4.3 1.5 4.7 4.7.2 1.1.2 2.3.2 3.5v.4c0 2.7.7 5.2 2.2 7.4a13 13 0 0 0 5.7 4.9v-.3l-.2-.3c-1.8-5.6-.5-9.5 4.4-12.8l1.5-1a73 73 0 0 0 3.2-2.2 16 16 0 0 0 6.8-11.4c.3-2 .1-4-.6-6l-.8.6-1.6 1a37 37 0 0 1-22.4 2.7c-5-.7-9.7-2-13.2-6.2Z" />
-    <style>
-        path { fill: #000; }
-        @media (prefers-color-scheme: dark) {
-            path { fill: #FFF; }
-        }
-    </style>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 512 512"
+   role="img"
+   aria-labelledby="title desc"
+   version="1.1"
+   id="svg49"
+   sodipodi:docname="graph_book_icon.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview49"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="2.8320312"
+     inkscape:cx="256"
+     inkscape:cy="256"
+     inkscape:window-width="2880"
+     inkscape:window-height="1694"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg49" />
+  <title
+     id="title">Glowing network graph above an open book</title>
+  <desc
+     id="desc">Transparent-background SVG of a cyan wireframe mountain graph floating over an open book with blue and purple glow accents.</desc>
+  <defs
+     id="defs12">
+    <filter
+       id="cyanGlow"
+       x="-inf"
+       y="-0.33111214"
+       width="inf"
+       height="1.6596375">
+      <feGaussianBlur
+         stdDeviation="3"
+         result="blur"
+         id="feGaussianBlur1" />
+      <feColorMatrix
+         in="blur"
+         type="matrix"
+         values="0 0 0 0 0  0 0 0 0 .85  0 0 0 0 1  0 0 0 .85 0"
+         result="glow"
+         id="feColorMatrix1" />
+      <feMerge
+         id="feMerge2">
+        <feMergeNode
+           in="glow"
+           id="feMergeNode1" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode2" />
+      </feMerge>
+    </filter>
+    <filter
+       id="softGlow"
+       x="-0.048979592"
+       y="-0.16551724"
+       width="1.0979592"
+       height="1.3310345">
+      <feGaussianBlur
+         stdDeviation="8"
+         result="blur"
+         id="feGaussianBlur2" />
+      <feMerge
+         id="feMerge4">
+        <feMergeNode
+           in="blur"
+           id="feMergeNode3" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode4" />
+      </feMerge>
+    </filter>
+    <linearGradient
+       id="bookLine"
+       x1="72"
+       y1="402"
+       x2="440"
+       y2="402"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#05d9ff"
+         id="stop4" />
+      <stop
+         offset=".52"
+         stop-color="#6ff7ff"
+         id="stop5" />
+      <stop
+         offset="1"
+         stop-color="#e14dff"
+         id="stop6" />
+    </linearGradient>
+    <linearGradient
+       id="wire"
+       x1="96"
+       y1="106"
+       x2="416"
+       y2="360"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#00d8ff"
+         id="stop7" />
+      <stop
+         offset=".55"
+         stop-color="#6bf6ff"
+         id="stop8" />
+      <stop
+         offset="1"
+         stop-color="#9a65ff"
+         id="stop9" />
+    </linearGradient>
+    <radialGradient
+       id="pageGlow"
+       cx="50%"
+       cy="50%"
+       r="60%">
+      <stop
+         offset="0"
+         stop-color="#58f7ff"
+         stop-opacity=".55"
+         id="stop10" />
+      <stop
+         offset=".55"
+         stop-color="#1772ff"
+         stop-opacity=".18"
+         id="stop11" />
+      <stop
+         offset="1"
+         stop-color="#1772ff"
+         stop-opacity="0"
+         id="stop12" />
+    </radialGradient>
+  </defs>
+  <!-- transparent background intentionally left empty -->
+  <!-- soft aura under graph and book -->
+  <ellipse
+     cx="256"
+     cy="386"
+     rx="196"
+     ry="58"
+     fill="url(#pageGlow)"
+     opacity=".55"
+     filter="url(#softGlow)"
+     id="ellipse12" />
+  <!-- open book -->
+  <g
+     fill="none"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="g20">
+    <path
+       d="M256 426 C218 392 141 392 71 414"
+       stroke="url(#bookLine)"
+       stroke-width="3.5"
+       filter="url(#cyanGlow)"
+       id="path13" />
+    <path
+       d="M256 426 C294 392 371 392 441 414"
+       stroke="url(#bookLine)"
+       stroke-width="3.5"
+       filter="url(#cyanGlow)"
+       id="path14" />
+    <path
+       d="M256 426 C218 407 139 407 78 425"
+       stroke="#179dff"
+       stroke-opacity=".7"
+       stroke-width="2"
+       id="path15" />
+    <path
+       d="M256 426 C294 407 373 407 434 425"
+       stroke="#c13cff"
+       stroke-opacity=".65"
+       stroke-width="2"
+       id="path16" />
+    <path
+       d="M256 426 L256 391"
+       stroke="#74f7ff"
+       stroke-width="2.4"
+       filter="url(#cyanGlow)"
+       id="path17" />
+    <path
+       d="M92 431 C151 421 215 419 256 438 C297 419 361 421 420 431"
+       stroke="#5cecff"
+       stroke-opacity=".32"
+       stroke-width="2"
+       id="path18" />
+    <path
+       d="M114 402 C164 396 218 399 248 418"
+       stroke="#2feeff"
+       stroke-opacity=".38"
+       stroke-width="1.5"
+       id="path19" />
+    <path
+       d="M398 402 C348 396 294 399 264 418"
+       stroke="#e85cff"
+       stroke-opacity=".35"
+       stroke-width="1.5"
+       id="path20" />
+  </g>
+  <!-- network mountain / graph -->
+  <g
+     filter="url(#cyanGlow)"
+     id="g49">
+    <g
+       fill="none"
+       stroke="url(#wire)"
+       stroke-width="2.1"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       opacity=".96"
+       id="g30">
+      <!-- outer silhouette -->
+      <path
+         d="M82 337 L124 312 L154 268 L190 207 L231 103 L255 160 L276 178 L304 223 L326 229 L362 286 L430 341"
+         id="path21" />
+      <path
+         d="M82 337 L168 346 L212 319 L255 348 L307 328 L357 349 L430 341"
+         id="path22" />
+      <!-- vertical/diagonal structure -->
+      <path
+         d="M124 312 L168 346 L154 268 L212 319 L190 207 L231 103 L231 213 L255 160 L270 242 L276 178 L304 223 L307 328 L326 229 L362 286 L357 349"
+         id="path23" />
+      <path
+         d="M154 268 L190 207 L231 213 L270 242 L304 223 L326 229"
+         id="path24" />
+      <path
+         d="M168 346 L212 319 L233 273 L270 242 L307 328 L357 349"
+         id="path25" />
+      <path
+         d="M190 207 L233 273 L231 213 L276 178 L270 242 L326 229"
+         id="path26" />
+      <path
+         d="M212 319 L233 273 L307 328"
+         id="path27" />
+      <path
+         d="M231 103 L276 178 L304 223"
+         id="path28" />
+      <path
+         d="M124 312 L154 268 L212 319"
+         id="path29" />
+      <path
+         d="M233 273 L255 348 L270 242"
+         id="path30" />
+    </g>
+    <!-- nodes -->
+    <g
+       fill="#8dfaff"
+       stroke="#ffffff"
+       stroke-width=".6"
+       id="g48">
+      <circle
+         cx="82"
+         cy="337"
+         r="2.8"
+         id="circle30" />
+      <circle
+         cx="124"
+         cy="312"
+         r="3"
+         id="circle31" />
+      <circle
+         cx="154"
+         cy="268"
+         r="3.3"
+         id="circle32" />
+      <circle
+         cx="168"
+         cy="346"
+         r="3"
+         id="circle33" />
+      <circle
+         cx="190"
+         cy="207"
+         r="3.2"
+         id="circle34" />
+      <circle
+         cx="212"
+         cy="319"
+         r="3.5"
+         id="circle35" />
+      <circle
+         cx="231"
+         cy="103"
+         r="3.4"
+         id="circle36" />
+      <circle
+         cx="231"
+         cy="213"
+         r="3.4"
+         id="circle37" />
+      <circle
+         cx="233"
+         cy="273"
+         r="3.5"
+         id="circle38" />
+      <circle
+         cx="255"
+         cy="160"
+         r="2.8"
+         id="circle39" />
+      <circle
+         cx="255"
+         cy="348"
+         r="3.2"
+         id="circle40" />
+      <circle
+         cx="270"
+         cy="242"
+         r="3.6"
+         id="circle41" />
+      <circle
+         cx="276"
+         cy="178"
+         r="2.8"
+         id="circle42" />
+      <circle
+         cx="304"
+         cy="223"
+         r="3.2"
+         id="circle43" />
+      <circle
+         cx="307"
+         cy="328"
+         r="3.4"
+         id="circle44" />
+      <circle
+         cx="326"
+         cy="229"
+         r="3"
+         id="circle45" />
+      <circle
+         cx="357"
+         cy="349"
+         r="2.9"
+         id="circle46" />
+      <circle
+         cx="362"
+         cy="286"
+         r="3"
+         id="circle47" />
+      <circle
+         cx="430"
+         cy="341"
+         r="2.4"
+         id="circle48" />
+    </g>
+  </g>
 </svg>

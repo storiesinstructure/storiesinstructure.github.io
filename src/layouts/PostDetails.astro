@@ -1,5 +1,6 @@
 ---
 import { render, type CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
@@ -24,6 +25,7 @@ const { post, posts } = Astro.props;
 
 const {
   title,
+  subtitle,
   author,
   description,
   ogImage: initOgImage,
@@ -33,6 +35,8 @@ const {
   timezone,
   tags,
   hideEditPost,
+  series,
+  seriesPart,
 } = post.data;
 
 const { Content } = await render(post);
@@ -90,12 +94,47 @@ const nextPost =
     class:list={["app-layout pb-12", { "mt-8": !SITE.showBackButton }]}
     data-pagefind-body
   >
+    {
+      initOgImage && (
+        <div class="mb-8 w-full overflow-hidden rounded">
+          {typeof initOgImage === "string" ? (
+            <img
+              src={initOgImage}
+              alt={title}
+              class="w-full object-cover"
+              style="aspect-ratio: 1600/840"
+            />
+          ) : (
+            <Image
+              src={initOgImage}
+              alt={title}
+              class="w-full object-cover"
+              style="aspect-ratio: 1600/840"
+            />
+          )}
+        </div>
+      )
+    }
     <h1
       transition:name={slugifyStr(title.replaceAll(".", "-"))}
       class="inline-block text-2xl font-bold text-accent sm:text-3xl"
     >
       {title}
     </h1>
+    {subtitle && <h3 class="mt-1 text-xl italic font-semibold text-accent" style="text-shadow: 0 0 8px var(--accent), 0 0 20px color-mix(in srgb, var(--accent) 40%, transparent)">{subtitle}</h3>}
+    {
+      series && (
+        <p class="mt-2 text-sm">
+          Part of the series:{" "}
+          <a
+            href={`/series/${slugifyStr(series)}/`}
+            class="font-semibold text-accent hover:underline"
+          >
+            {series}{seriesPart ? ` — Part ${seriesPart}` : ""}
+          </a>
+        </p>
+      )
+    }
     <div class="my-2 flex items-center gap-2">
       <Datetime {pubDatetime} {modDatetime} {timezone} size="lg" />
       <span
@@ -107,6 +146,7 @@ const nextPost =
       >
       <EditPost {hideEditPost} {post} class="max-sm:hidden" />
     </div>
+    <hr class="my-6 border-dashed border-border" />
     <article
       id="article"
       class="app-prose mt-8 w-full max-w-app prose-pre:bg-(--shiki-light-bg) dark:prose-pre:bg-(--shiki-dark-bg)"

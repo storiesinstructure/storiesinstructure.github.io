@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="-163 -172 300 200">
+ <title>Comparison flight levels</title>
+ <desc>Comparison of assorted flight level systems to scale by CMG Lee.</desc>
+ <style type="text/css">
+.main  { font-family:Helvetica,Arial,sans-serif; font-size:9px; text-anchor:middle;
+         fill:#000000; stroke:none; stroke-width:4; stroke-linecap:round; }
+text   { stroke:none; }
+.title { font-weight:bold; }
+ </style>
+ <defs>
+  <pattern id="pattern_f_1" patternUnits="userSpaceOnUse" width="10" height="10">
+   <rect x="-5" y="0" width="20" height="10" stroke="#999999" fill="none"/>
+  </pattern>
+  <pattern id="pattern_f_5" patternUnits="userSpaceOnUse" width="10" height="50">
+   <rect x="-5" y="0" width="20" height="50" stroke="#666666" fill="url(#pattern_f_1)"/>
+  </pattern>
+  <pattern id="pattern_f_10" patternUnits="userSpaceOnUse" width="10" height="100">
+   <rect x="-5" y="0" width="20" height="100" stroke="#333333" fill="url(#pattern_f_5)"/>
+  </pattern>
+  <pattern id="pattern_m_1" patternUnits="userSpaceOnUse" width="10" height="2">
+   <rect x="-5" y="0" width="20" height="2" stroke-width="0.2" stroke="#999999" fill="none"/>
+  </pattern>
+  <pattern id="pattern_m_5" patternUnits="userSpaceOnUse" width="10" height="10">
+   <rect x="-5" y="0" width="20" height="10" stroke-width="0.2" stroke="#666666" fill="url(#pattern_m_1)"/>
+  </pattern>
+  <pattern id="pattern_m_10" patternUnits="userSpaceOnUse" width="10" height="50">
+   <rect x="-5" y="0" width="20" height="50" stroke-width="0.2" stroke="#333333" fill="url(#pattern_m_5)"/>
+  </pattern>
+  <path id="arrow" d="M 2,0 H 36 m -7,-4 l 7,4 l -7,4" fill="none"/>
+  <g id="ef"><use xlink:href="#arrow" stroke="#ff0000"/></g>
+  <g id="wf"><use xlink:href="#arrow" stroke="#0000ff" transform="scale(-1)"/></g>
+  <g id="em"><use xlink:href="#ef" transform="scale(0.3048)"/></g>
+  <g id="wm"><use xlink:href="#wf" transform="scale(0.3048)"/></g>
+  <g id="common_f">
+   <use xlink:href="#ef" transform="translate(0, -10)"/>
+   <use xlink:href="#ef" transform="translate(0, -30)"/>
+   <use xlink:href="#ef" transform="translate(0, -50)"/>
+   <use xlink:href="#ef" transform="translate(0, -70)"/>
+   <use xlink:href="#ef" transform="translate(0, -90)"/>
+   <use xlink:href="#ef" transform="translate(0,-110)"/>
+   <use xlink:href="#ef" transform="translate(0,-130)"/>
+   <use xlink:href="#ef" transform="translate(0,-150)"/>
+   <use xlink:href="#ef" transform="translate(0,-170)"/>
+   <use xlink:href="#ef" transform="translate(0,-190)"/>
+   <use xlink:href="#ef" transform="translate(0,-210)"/>
+   <use xlink:href="#ef" transform="translate(0,-230)"/>
+   <use xlink:href="#ef" transform="translate(0,-250)"/>
+   <use xlink:href="#ef" transform="translate(0,-270)"/>
+   <use xlink:href="#ef" transform="translate(0,-290)"/>
+   <use xlink:href="#ef" transform="translate(0,-330)"/>
+   <use xlink:href="#ef" transform="translate(0,-370)"/>
+   <use xlink:href="#ef" transform="translate(0,-410)"/>
+   <use xlink:href="#ef" transform="translate(0,-450)"/>
+   <use xlink:href="#ef" transform="translate(0,-490)"/>
+   <use xlink:href="#ef" transform="translate(0,-530)"/>
+   <use xlink:href="#wf" transform="translate(0, -20)"/>
+   <use xlink:href="#wf" transform="translate(0, -40)"/>
+   <use xlink:href="#wf" transform="translate(0, -60)"/>
+   <use xlink:href="#wf" transform="translate(0, -80)"/>
+   <use xlink:href="#wf" transform="translate(0,-100)"/>
+   <use xlink:href="#wf" transform="translate(0,-120)"/>
+   <use xlink:href="#wf" transform="translate(0,-140)"/>
+   <use xlink:href="#wf" transform="translate(0,-160)"/>
+   <use xlink:href="#wf" transform="translate(0,-180)"/>
+   <use xlink:href="#wf" transform="translate(0,-200)"/>
+   <use xlink:href="#wf" transform="translate(0,-220)"/>
+   <use xlink:href="#wf" transform="translate(0,-240)"/>
+   <use xlink:href="#wf" transform="translate(0,-260)"/>
+   <use xlink:href="#wf" transform="translate(0,-280)"/>
+   <use xlink:href="#wf" transform="translate(0,-430)"/>
+   <use xlink:href="#wf" transform="translate(0,-470)"/>
+   <use xlink:href="#wf" transform="translate(0,-510)"/>
+   <use xlink:href="#wf" transform="translate(0,-550)"/>
+  </g>
+  <g id="common_m">
+   <use xlink:href="#em" transform="translate(0,  -9)"/>
+   <use xlink:href="#em" transform="translate(0, -15)"/>
+   <use xlink:href="#em" transform="translate(0, -21)"/>
+   <use xlink:href="#em" transform="translate(0, -27)"/>
+   <use xlink:href="#em" transform="translate(0, -33)"/>
+   <use xlink:href="#em" transform="translate(0, -39)"/>
+   <use xlink:href="#em" transform="translate(0, -45)"/>
+   <use xlink:href="#em" transform="translate(0, -51)"/>
+   <use xlink:href="#em" transform="translate(0, -57)"/>
+   <use xlink:href="#em" transform="translate(0, -63)"/>
+   <use xlink:href="#em" transform="translate(0, -69)"/>
+   <use xlink:href="#em" transform="translate(0, -75)"/>
+   <use xlink:href="#em" transform="translate(0, -81)"/>
+   <use xlink:href="#em" transform="translate(0,-101)"/>
+   <use xlink:href="#em" transform="translate(0,-161)"/>
+   <use xlink:href="#wm" transform="translate(0,  -6)"/>
+   <use xlink:href="#wm" transform="translate(0, -12)"/>
+   <use xlink:href="#wm" transform="translate(0, -18)"/>
+   <use xlink:href="#wm" transform="translate(0, -24)"/>
+   <use xlink:href="#wm" transform="translate(0, -30)"/>
+   <use xlink:href="#wm" transform="translate(0, -36)"/>
+   <use xlink:href="#wm" transform="translate(0, -42)"/>
+   <use xlink:href="#wm" transform="translate(0, -48)"/>
+   <use xlink:href="#wm" transform="translate(0, -54)"/>
+   <use xlink:href="#wm" transform="translate(0, -60)"/>
+   <use xlink:href="#wm" transform="translate(0, -66)"/>
+   <use xlink:href="#wm" transform="translate(0, -72)"/>
+   <use xlink:href="#wm" transform="translate(0, -78)"/>
+   <use xlink:href="#wm" transform="translate(0,-116)"/>
+   <use xlink:href="#wm" transform="translate(0,-131)"/>
+  </g>
+ </defs>
+ <circle cx="0" cy="0" r="99999" fill="#ffffff"/>
+ <g class="main">
+  <g font-size="30" transform="translate(-100,0) scale(0.3048)">
+   <rect x="0" y="-550" width="325" height="551" fill="url(#pattern_f_10)"/>
+   <g text-anchor="end">
+    <use xlink:href="#ef" transform="translate(-192,40)"/>
+    <use xlink:href="#wf" transform="translate(-155,75)"/>
+    <text transform="translate(  0,  40)" x="0" y="0.7ex"  >0&#176;&#8211;&#8202;179&#176;</text>
+    <text transform="translate(  0,  75)" x="0" y="0.7ex">180&#176;&#8211;&#8202;359&#176;</text>
+    <text transform="translate(-10,   0)" x="0" y="0.7ex"><tspan    >0&#8242;</tspan><tspan x="-95">FL000:</tspan></text>
+    <text transform="translate(-10, -50)" x="0" y="0.7ex"><tspan >5000&#8242;</tspan><tspan x="-95">FL050:</tspan></text>
+    <text transform="translate(-10,-100)" x="0" y="0.7ex"><tspan>10000&#8242;</tspan><tspan x="-95">FL100:</tspan></text>
+    <text transform="translate(-10,-150)" x="0" y="0.7ex"><tspan>15000&#8242;</tspan><tspan x="-95">FL150:</tspan></text>
+    <text transform="translate(-10,-200)" x="0" y="0.7ex"><tspan>20000&#8242;</tspan><tspan x="-95">FL200:</tspan></text>
+    <text transform="translate(-10,-250)" x="0" y="0.7ex"><tspan>25000&#8242;</tspan><tspan x="-95">FL250:</tspan></text>
+    <text transform="translate(-10,-300)" x="0" y="0.7ex"><tspan>30000&#8242;</tspan><tspan x="-95">FL300:</tspan></text>
+    <text transform="translate(-10,-350)" x="0" y="0.7ex"><tspan>35000&#8242;</tspan><tspan x="-95">FL350:</tspan></text>
+    <text transform="translate(-10,-400)" x="0" y="0.7ex"><tspan>40000&#8242;</tspan><tspan x="-95">FL400:</tspan></text>
+    <text transform="translate(-10,-450)" x="0" y="0.7ex"><tspan>45000&#8242;</tspan><tspan x="-95">FL450:</tspan></text>
+    <text transform="translate(-10,-500)" x="0" y="0.7ex"><tspan>50000&#8242;</tspan><tspan x="-95">FL500:</tspan></text>
+    <text transform="translate(-10,-550)" x="0" y="0.7ex"><tspan>55000&#8242;</tspan><tspan x="-95">FL550:</tspan></text>
+   </g>
+   <g transform="translate(60,0)">
+    <text class="title" x="0" y="4ex">VFR</text>
+    <use xlink:href="#ef" transform="translate(0, -35)"/>
+    <use xlink:href="#ef" transform="translate(0, -55)"/>
+    <use xlink:href="#ef" transform="translate(0, -75)"/>
+    <use xlink:href="#ef" transform="translate(0, -95)"/>
+    <use xlink:href="#ef" transform="translate(0,-115)"/>
+    <use xlink:href="#ef" transform="translate(0,-135)"/>
+    <use xlink:href="#ef" transform="translate(0,-155)"/>
+    <use xlink:href="#ef" transform="translate(0,-175)"/>
+    <use xlink:href="#ef" transform="translate(0,-195)"/>
+    <use xlink:href="#wf" transform="translate(0, -45)"/>
+    <use xlink:href="#wf" transform="translate(0, -65)"/>
+    <use xlink:href="#wf" transform="translate(0, -85)"/>
+    <use xlink:href="#wf" transform="translate(0,-105)"/>
+    <use xlink:href="#wf" transform="translate(0,-125)"/>
+    <use xlink:href="#wf" transform="translate(0,-145)"/>
+    <use xlink:href="#wf" transform="translate(0,-165)"/>
+    <use xlink:href="#wf" transform="translate(0,-185)"/>
+   </g>
+   <g transform="translate(160,0)">
+    <text class="title" x="0" y="4ex">IFR</text>
+    <use xlink:href="#common_f"/>
+    <use xlink:href="#wf" transform="translate(0,-310)"/>
+    <use xlink:href="#wf" transform="translate(0,-350)"/>
+    <use xlink:href="#wf" transform="translate(0,-390)"/>
+   </g>
+   <g transform="translate(260,0)">
+    <text class="title" x="0" y="4ex">RVSM</text>
+    <use xlink:href="#common_f"/>
+    <use xlink:href="#ef" transform="translate(0,-310)"/>
+    <use xlink:href="#ef" transform="translate(0,-350)"/>
+    <use xlink:href="#ef" transform="translate(0,-390)"/>
+    <use xlink:href="#wf" transform="translate(0,-300)"/>
+    <use xlink:href="#wf" transform="translate(0,-320)"/>
+    <use xlink:href="#wf" transform="translate(0,-340)"/>
+    <use xlink:href="#wf" transform="translate(0,-360)"/>
+    <use xlink:href="#wf" transform="translate(0,-380)"/>
+    <use xlink:href="#wf" transform="translate(0,-400)"/>
+   </g>
+  </g>
+  <g>
+   <rect x="0" y="-160" width="100" height="161" fill="url(#pattern_m_10)"/>
+   <circle cx="-0.5" cy="-64"  r="0.5"/>
+   <circle cx="-0.5" cy="-128" r="0.5"/>
+   <g transform="translate(113,15) scale(0.8)">
+    <use xlink:href="#em" transform="rotate(-90)"/>
+    <use xlink:href="#em" transform="rotate(-45)"/>
+    <use xlink:href="#em" transform="rotate( 45)"/>
+    <use xlink:href="#em"/>
+    <use xlink:href="#wm" transform="rotate(-90)"/>
+    <use xlink:href="#wm" transform="rotate(-45)"/>
+    <use xlink:href="#wm" transform="rotate( 45)"/>
+    <use xlink:href="#wm"/>
+    <g fill="none" stroke-width="0.5">
+     <path d="M 0,-12 A 12,12 0 0 0 0,12" stroke="#0000ff"/>
+     <path d="M 0,-12 A 12,12 0 0 1 0,12" stroke="#ff0000"/>
+     <circle cx="0" cy="-12" r="1.5" fill="#ff0000" stroke="#0000ff"/>
+     <circle cx="0" cy="12"  r="1.5" fill="#0000ff" stroke="#ff0000"/>
+    </g>
+   </g>
+   <g text-anchor="end">
+    <text transform="translate(135,   0)" x="0" y="0.7ex"    >0&#8202;m</text>
+    <text transform="translate(135, -10)" x="0" y="0.7ex" >1000&#8202;m</text>
+    <text transform="translate(135, -20)" x="0" y="0.7ex" >2000&#8202;m</text>
+    <text transform="translate(135, -30)" x="0" y="0.7ex" >3000&#8202;m</text>
+    <text transform="translate(135, -40)" x="0" y="0.7ex" >4000&#8202;m</text>
+    <text transform="translate(135, -50)" x="0" y="0.7ex" >5000&#8202;m</text>
+    <text transform="translate(135, -60)" x="0" y="0.7ex" >6000&#8202;m</text>
+    <text transform="translate(135, -70)" x="0" y="0.7ex" >7000&#8202;m</text>
+    <text transform="translate(135, -80)" x="0" y="0.7ex" >8000&#8202;m</text>
+    <text transform="translate(135, -90)" x="0" y="0.7ex" >9000&#8202;m</text>
+    <text transform="translate(135,-100)" x="0" y="0.7ex">10000&#8202;m</text>
+    <text transform="translate(135,-110)" x="0" y="0.7ex">11000&#8202;m</text>
+    <text transform="translate(135,-120)" x="0" y="0.7ex">12000&#8202;m</text>
+    <text transform="translate(135,-130)" x="0" y="0.7ex">13000&#8202;m</text>
+    <text transform="translate(135,-140)" x="0" y="0.7ex">14000&#8202;m</text>
+    <text transform="translate(135,-150)" x="0" y="0.7ex">15000&#8202;m</text>
+    <text transform="translate(135,-160)" x="0" y="0.7ex">16000&#8202;m</text>
+   </g>
+   <g transform="translate(82,0)">
+    <text class="title" x="0" y="3ex"><tspan>kg,&#8201;kz,</tspan><tspan x="0" dy="2ex">tj,&#8202;uz,&#8202;tm</tspan></text>
+    <use xlink:href="#common_m"/>
+    <use xlink:href="#em" transform="translate(0, -91)"/>
+    <use xlink:href="#em" transform="translate(0,-111)"/>
+    <use xlink:href="#em" transform="translate(0,-121)"/>
+    <use xlink:href="#em" transform="translate(0,-141)"/>
+    <use xlink:href="#wm" transform="translate(0, -86)"/>
+    <use xlink:href="#wm" transform="translate(0, -96)"/>
+    <use xlink:href="#wm" transform="translate(0,-106)"/>
+    <use xlink:href="#wm" transform="translate(0,-151)"/>
+   </g>
+   <g transform="translate(50,0)">
+    <text class="title" x="0" y="3ex"><tspan>cn,</tspan><tspan x="0" dy="2ex">mn</tspan></text>
+    <use xlink:href="#common_m"/>
+    <use xlink:href="#em" transform="translate(0, -89)"/>
+    <use xlink:href="#em" transform="translate(0, -95)"/>
+    <use xlink:href="#em" transform="translate(0,-107)"/>
+    <use xlink:href="#em" transform="translate(0,-113)"/>
+    <use xlink:href="#em" transform="translate(0,-119)"/>
+    <use xlink:href="#em" transform="translate(0,-125)"/>
+    <use xlink:href="#em" transform="translate(0,-137)"/>
+    <use xlink:href="#em" transform="translate(0,-149)"/>
+    <use xlink:href="#wm" transform="translate(0, -84)"/>
+    <use xlink:href="#wm" transform="translate(0, -92)"/>
+    <use xlink:href="#wm" transform="translate(0, -98)"/>
+    <use xlink:href="#wm" transform="translate(0,-104)"/>
+    <use xlink:href="#wm" transform="translate(0,-110)"/>
+    <use xlink:href="#wm" transform="translate(0,-122)"/>
+    <use xlink:href="#wm" transform="translate(0,-143)"/>
+    <use xlink:href="#wm" transform="translate(0,-155)"/>
+   </g>
+   <g transform="translate(19,0)">
+    <text class="title" x="0" y="3ex"><tspan>ru,&#8202;kp</tspan><tspan x="0" dy="2ex">IFR</tspan></text>
+    <use xlink:href="#em" transform="translate(0,  -3.0)"/>
+    <use xlink:href="#em" transform="translate(0,  -9.0)"/>
+    <use xlink:href="#em" transform="translate(0, -15.0)"/>
+    <use xlink:href="#em" transform="translate(0, -21.5)"/>
+    <use xlink:href="#em" transform="translate(0, -27.5)"/>
+    <use xlink:href="#em" transform="translate(0, -33.5)"/>
+    <use xlink:href="#em" transform="translate(0, -39.5)"/>
+    <use xlink:href="#em" transform="translate(0, -45.5)"/>
+    <use xlink:href="#em" transform="translate(0, -52.0)"/>
+    <use xlink:href="#em" transform="translate(0, -58.0)"/>
+    <use xlink:href="#em" transform="translate(0, -64.0)"/>
+    <use xlink:href="#em" transform="translate(0, -70.0)"/>
+    <use xlink:href="#em" transform="translate(0, -76.0)"/>
+    <use xlink:href="#em" transform="translate(0, -82.5)"/>
+    <use xlink:href="#em" transform="translate(0, -88.5)"/>
+    <use xlink:href="#em" transform="translate(0, -94.5)"/>
+    <use xlink:href="#em" transform="translate(0,-100.5)"/>
+    <use xlink:href="#em" transform="translate(0,-106.5)"/>
+    <use xlink:href="#em" transform="translate(0,-113.0)"/>
+    <use xlink:href="#em" transform="translate(0,-119.0)"/>
+    <use xlink:href="#em" transform="translate(0,-125.0)"/>
+    <use xlink:href="#em" transform="translate(0,-137.0)"/>
+    <use xlink:href="#em" transform="translate(0,-149.5)"/>
+    <use xlink:href="#wm" transform="translate(0,  -6.0)"/>
+    <use xlink:href="#wm" transform="translate(0, -12.0)"/>
+    <use xlink:href="#wm" transform="translate(0, -18.5)"/>
+    <use xlink:href="#wm" transform="translate(0, -24.5)"/>
+    <use xlink:href="#wm" transform="translate(0, -30.5)"/>
+    <use xlink:href="#wm" transform="translate(0, -36.5)"/>
+    <use xlink:href="#wm" transform="translate(0, -42.5)"/>
+    <use xlink:href="#wm" transform="translate(0, -49.0)"/>
+    <use xlink:href="#wm" transform="translate(0, -55.0)"/>
+    <use xlink:href="#wm" transform="translate(0, -61.0)"/>
+    <use xlink:href="#wm" transform="translate(0, -67.0)"/>
+    <use xlink:href="#wm" transform="translate(0, -73.0)"/>
+    <use xlink:href="#wm" transform="translate(0, -79.0)"/>
+    <use xlink:href="#wm" transform="translate(0, -85.5)"/>
+    <use xlink:href="#wm" transform="translate(0, -91.5)"/>
+    <use xlink:href="#wm" transform="translate(0, -97.5)"/>
+    <use xlink:href="#wm" transform="translate(0,-103.5)"/>
+    <use xlink:href="#wm" transform="translate(0,-109.5)"/>
+    <use xlink:href="#wm" transform="translate(0,-116.0)"/>
+    <use xlink:href="#wm" transform="translate(0,-122.0)"/>
+    <use xlink:href="#wm" transform="translate(0,-131.0)"/>
+    <use xlink:href="#wm" transform="translate(0,-143.5)"/>
+    <use xlink:href="#wm" transform="translate(0,-155.5)"/>
+   </g>
+  </g>
+ </g>
+</svg>

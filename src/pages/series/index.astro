@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Main from "@/layouts/Main.astro";
+import { slugifyStr } from "@/utils/slugify";
+import { SITE } from "@/config";
+
+const posts = await getCollection("blog", ({ data }) => !data.draft);
+
+const seriesMap = new Map<string, number>();
+for (const post of posts) {
+  if (post.data.series) {
+    seriesMap.set(post.data.series, (seriesMap.get(post.data.series) ?? 0) + 1);
+  }
+}
+
+const seriesList = [...seriesMap.entries()].sort(([a], [b]) => a.localeCompare(b));
+---
+
+<Layout title={`Series | ${SITE.title}`}>
+  <Header />
+  <Main pageTitle="Series" pageDesc="Collections of posts on a theme.">
+    <ul class="flex flex-col gap-4">
+      {
+        seriesList.map(([name, count]) => (
+          <li>
+            <a
+              href={`/series/${slugifyStr(name)}/`}
+              class="group flex items-baseline justify-between gap-4 hover:text-accent"
+            >
+              <span class="text-lg font-semibold group-hover:underline">{name}</span>
+              <span class="text-sm opacity-60 shrink-0">{count} {count === 1 ? "post" : "posts"}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </Main>
+  <Footer />
+</Layout>

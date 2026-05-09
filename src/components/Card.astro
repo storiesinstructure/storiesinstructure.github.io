@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
 import { slugifyStr } from "@/utils/slugify";
 import { getPath } from "@/utils/getPath";
 import Datetime from "./Datetime.astro";
@@ -10,24 +11,48 @@ type Props = {
 
 const { variant: Heading = "h2", id, data, filePath } = Astro.props;
 
-const { title, description, ...props } = data;
+const { title, description, ogImage, ...props } = data;
+
+const postUrl = getPath(id, filePath);
 ---
 
 <li class="my-6">
   <a
-    href={getPath(id, filePath)}
-    class:list={[
-      "inline-block text-lg font-medium text-accent",
-      "decoration-dashed underline-offset-4 hover:underline",
-      "focus-visible:no-underline focus-visible:underline-offset-0",
-    ]}
+    href={postUrl}
+    class="group grid gap-4 rounded-xl border border-border p-4 transition hover:border-accent/50 sm:grid-cols-[1fr_auto]"
   >
-    <Heading
-      style={{ viewTransitionName: slugifyStr(title.replaceAll(".", "-")) }}
-    >
-      {title}
-    </Heading>
+    <div class="flex flex-col gap-2">
+      <Heading
+        class="text-lg font-semibold text-accent group-hover:underline decoration-dashed underline-offset-4"
+        style={{ viewTransitionName: slugifyStr(title.replaceAll(".", "-")) }}
+      >
+        {title}
+      </Heading>
+      <Datetime {...props} />
+      <p class="text-sm text-foreground/80 line-clamp-3">{description}</p>
+    </div>
+    {
+      ogImage && (
+        <div class="flex items-center order-first sm:order-last">
+          <div class="w-full overflow-hidden rounded-lg sm:w-44 aspect-[800/420]">
+            {typeof ogImage === "string" ? (
+              <img
+                src={ogImage}
+                alt={title}
+                class="h-full w-full object-contain"
+              />
+            ) : (
+              <Image
+                src={ogImage}
+                alt={title}
+                class="h-full w-full object-contain"
+                widths={[176, 352]}
+                sizes="176px"
+              />
+            )}
+          </div>
+        </div>
+      )
+    }
   </a>
-  <Datetime {...props} />
-  <p>{description}</p>
 </li>

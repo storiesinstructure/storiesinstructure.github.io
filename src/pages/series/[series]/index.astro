@@ -1,0 +1,59 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Main from "@/layouts/Main.astro";
+import Card from "@/components/Card.astro";
+import { slugifyStr } from "@/utils/slugify";
+import { SITE } from "@/config";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+
+  const seriesMap = new Map<string, typeof posts>();
+  for (const post of posts) {
+    if (post.data.series) {
+      const slug = slugifyStr(post.data.series);
+      if (!seriesMap.has(slug)) seriesMap.set(slug, []);
+      seriesMap.get(slug)!.push(post);
+    }
+  }
+
+  return [...seriesMap.entries()].map(([series, seriesPosts]) => ({
+    params: { series },
+    props: {
+      seriesName: seriesPosts[0].data.series!,
+      posts: seriesPosts.sort(
+        (a, b) => (a.data.seriesPart ?? 0) - (b.data.seriesPart ?? 0)
+      ),
+    },
+  }));
+}
+
+const { seriesName, posts } = Astro.props;
+---
+
+<Layout title={`${seriesName} | ${SITE.title}`}>
+  <Header />
+  <Main
+    pageTitle={seriesName}
+    pageDesc={`${posts.length} ${posts.length === 1 ? "post" : "posts"} in this series.`}
+  >
+    <ul>
+      {
+        posts.map(post => (
+          <li class="flex items-start gap-3">
+            {post.data.seriesPart && (
+              <span class="mt-1 shrink-0 text-sm font-bold text-accent opacity-75">
+                #{post.data.seriesPart}
+              </span>
+            )}
+            <Card {...post} />
+          </li>
+        ))
+      }
+    </ul>
+  </Main>
+  <Footer />
+</Layout>
