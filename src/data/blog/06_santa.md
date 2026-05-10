@@ -4,7 +4,7 @@ subtitle: "How Santa Claus navigates straight to your chimney"
 pubDatetime: 2025-12-30
 description: "How Santa Claus navigates from Lapland to your chimney — and why European airspace is a directed graph of waypoints, airways, and flight levels."
 tags: ["graphs", "geospatial", "flight-planning", "airspace", "graph-theory", "aviation", "systems-thinking", "navigation", "santa-claus"]
-series: "GNSS & Positioning"
+series: "Positioning & Navigation"
 ogImage: ../../assets/images/06_santa/06_santa_cover.png
 slug: mapping-the-skies
 ---

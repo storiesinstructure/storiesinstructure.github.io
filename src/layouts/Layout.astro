@@ -135,7 +135,8 @@ const structuredData = isArticle
       href={new URL("rss.xml", Astro.site)}
     />
 
-    <meta name="theme-color" content="#0a0d1a" />
+    <meta name="theme-color" content="#f8f9ff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0d1a" media="(prefers-color-scheme: dark)" />
 
     {
       // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,

@@ -6,6 +6,7 @@ import Footer from "@/components/Footer.astro";
 import Main from "@/layouts/Main.astro";
 import { slugifyStr } from "@/utils/slugify";
 import { SITE } from "@/config";
+import { SERIES_META } from "@/data/series";
 
 const posts = await getCollection("blog", ({ data }) => !data.draft);
 
@@ -16,7 +17,12 @@ for (const post of posts) {
   }
 }
 
-const seriesList = [...seriesMap.entries()].sort(([a], [b]) => a.localeCompare(b));
+const seriesList = [...seriesMap.entries()].sort(([a], [b]) => {
+  const orderA = SERIES_META[a]?.order ?? 999;
+  const orderB = SERIES_META[b]?.order ?? 999;
+  if (orderA !== orderB) return orderA - orderB;
+  return a.localeCompare(b);
+});
 ---
 
 <Layout title={`Series | ${SITE.title}`}>
@@ -24,17 +30,41 @@ const seriesList = [...seriesMap.entries()].sort(([a], [b]) => a.localeCompare(b
   <Main pageTitle="Series" pageDesc="Collections of posts on a theme.">
     <ul class="flex flex-col gap-4">
       {
-        seriesList.map(([name, count]) => (
-          <li>
-            <a
-              href={`/series/${slugifyStr(name)}/`}
-              class="group flex items-baseline justify-between gap-4 hover:text-accent"
-            >
-              <span class="text-lg font-semibold group-hover:underline">{name}</span>
-              <span class="text-sm opacity-60 shrink-0">{count} {count === 1 ? "post" : "posts"}</span>
-            </a>
-          </li>
-        ))
+        seriesList.map(([name, count]) => {
+          const meta = SERIES_META[name];
+          const slug = slugifyStr(name);
+          return (
+            <li>
+              <a
+                href={`/series/${slug}/`}
+                class="group grid gap-4 rounded-xl border border-border p-4 transition hover:border-accent/50 sm:grid-cols-[1fr_auto]"
+              >
+                <div class="flex flex-col gap-2">
+                  <h2 class="text-lg font-semibold text-accent group-hover:underline decoration-dashed underline-offset-4">
+                    {name}
+                  </h2>
+                  {meta?.description && (
+                    <p class="text-sm text-foreground/80 line-clamp-3">{meta.description}</p>
+                  )}
+                  <p class="text-sm text-foreground/50">
+                    {count} {count === 1 ? "post" : "posts"}
+                  </p>
+                </div>
+                {meta?.image && (
+                  <div class="flex items-center order-first sm:order-last">
+                    <div class="w-full overflow-hidden rounded-lg sm:w-44 aspect-[800/420]">
+                      <img
+                        src={meta.image}
+                        alt={name}
+                        class="h-full w-full object-contain"
+                      />
+                    </div>
+                  </div>
+                )}
+              </a>
+            </li>
+          );
+        })
       }
     </ul>
   </Main>

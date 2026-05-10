@@ -44,8 +44,9 @@ const isActive = (path: string) => {
   >
     <a
       href="/"
-      class="absolute py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none"
+      class="absolute py-1 flex items-center gap-2 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none"
     >
+      <img src="/favicon.svg" alt="" class="h-8 w-8" aria-hidden="true" />
       {SITE.title}
     </a>
     <nav
@@ -74,11 +75,6 @@ const isActive = (path: string) => {
         <li class="col-span-2">
           <a href="/posts" class:list={{ "active-nav": isActive("/posts") }}>
             Posts
-          </a>
-        </li>
-        <li class="col-span-2">
-          <a href="/tags" class:list={{ "active-nav": isActive("/tags") }}>
-            Tags
           </a>
         </li>
         <li class="col-span-2">

@@ -10,6 +10,7 @@ import EditPost from "@/components/EditPost.astro";
 import ShareLinks from "@/components/ShareLinks.astro";
 import BackButton from "@/components/BackButton.astro";
 import BackToTopButton from "@/components/BackToTopButton.astro";
+import NewsletterSignup from "@/components/NewsletterSignup.astro";
 import { getPath } from "@/utils/getPath";
 import { slugifyStr } from "@/utils/slugify";
 import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
@@ -155,6 +156,8 @@ const nextPost =
     </article>
 
     <hr class="my-8 border-dashed" />
+
+    <NewsletterSignup />
 
     <EditPost class="sm:hidden" {hideEditPost} {post} />
 
