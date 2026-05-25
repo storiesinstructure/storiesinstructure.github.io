@@ -1,5 +1,5 @@
 ---
-const BUTTONDOWN_USERNAME = "YOUR_BUTTONDOWN_USERNAME"; // replace when ready
+const BUTTONDOWN_USERNAME = "storiesinstructure";
 ---
 
 <div class="my-8 rounded-xl border border-border p-6">
@@ -12,7 +12,7 @@ const BUTTONDOWN_USERNAME = "YOUR_BUTTONDOWN_USERNAME"; // replace when ready
     action={`https://buttondown.com/api/emails/embed-subscribe/${BUTTONDOWN_USERNAME}`}
     method="post"
     target="popupwindow"
-    onsubmit="window.open('https://buttondown.com/${BUTTONDOWN_USERNAME}', 'popupwindow')"
+    onsubmit={`window.open('https://buttondown.com/${BUTTONDOWN_USERNAME}', 'popupwindow')`}
     class="flex flex-col gap-2 sm:flex-row"
   >
     <input
