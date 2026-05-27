@@ -1,4 +1,5 @@
 interface Window {
+  posthog?: any;
   theme?: {
     themeValue: string;
     setPreference: () => void;
