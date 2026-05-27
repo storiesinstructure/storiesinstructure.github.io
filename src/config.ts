@@ -4,7 +4,7 @@ export const SITE = {
   profile: "https://storiesinstructure.com",
   desc: "Exploring the structure hidden in the world around us - from sensor data modelled as graphs, to 3D reconstruction, visual attention, and reasoning over graphs with AI. Whether it's visible or abstract, if it has structure, it has a story.",
   title: "Stories in Structure",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 4,
