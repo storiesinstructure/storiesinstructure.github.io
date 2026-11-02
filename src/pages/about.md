@@ -1,6 +1,7 @@
 ---
 layout: ../layouts/AboutLayout.astro
 title: "About"
+metaTitle: "About Agata Migalska"
 description: "Agata Migalska — climber, map obsessive, GenAI practitioner. Writing about structure in graphs, space, geometry, and perception."
 ---
 
@@ -12,4 +13,4 @@ This blog is a diary of the thoughts and revelations that accumulated over those
 
 I have an abstract mind and a somewhat absurd sense of humour. Both show up in the writing.
 
-You can reach me at [storiesinstructure@gmail.com](mailto:storiesinstructure@gmail.com), sign up to the newsletter below, or grab the [RSS feed](/rss.xml).
+You can reach me at [storiesinstructure@gmail.com](mailto:storiesinstructure@gmail.com), find me on [LinkedIn](https://www.linkedin.com/in/agatamigalska/), sign up to the newsletter below, or grab the [RSS feed](/rss.xml).

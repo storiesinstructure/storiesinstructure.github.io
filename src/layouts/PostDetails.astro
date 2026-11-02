@@ -143,6 +143,22 @@ const nextPost =
         </p>
       )
     }
+    <p class="mt-2 text-sm">
+      by{" "}
+      {
+        author === SITE.author ? (
+          <a
+            href="/about/"
+            rel="author"
+            class="font-semibold text-accent hover:underline"
+          >
+            {author}
+          </a>
+        ) : (
+          <span class="font-semibold">{author}</span>
+        )
+      }
+    </p>
     <div class="my-2 flex items-center gap-2">
       <Datetime {pubDatetime} {modDatetime} {timezone} size="lg" />
       <span

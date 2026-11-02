@@ -7,12 +7,20 @@ import Layout from "./Layout.astro";
 import NewsletterSignup from "@/components/NewsletterSignup.astro";
 import { SITE } from "@/config";
 
-type Props = MarkdownLayoutProps<{ title: string }>;
+type Props = MarkdownLayoutProps<{
+  title: string;
+  metaTitle?: string;
+  description?: string;
+}>;
 
 const { frontmatter } = Astro.props;
 ---
 
-<Layout title={`${frontmatter.title} | ${SITE.title}`}>
+<Layout
+  title={`${frontmatter.metaTitle ?? frontmatter.title} | ${SITE.title}`}
+  description={frontmatter.description}
+  isProfilePage
+>
   <Header />
   <Breadcrumb />
   <main id="main-content" class="app-layout">

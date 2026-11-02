@@ -1,7 +1,7 @@
 export const SITE = {
   website: "https://storiesinstructure.com",
   author: "Agata Migalska",
-  profile: "https://storiesinstructure.com",
+  profile: "https://storiesinstructure.com/about/",
   desc: "Exploring the structure hidden in the world around us - from sensor data modelled as graphs, to 3D reconstruction, visual attention, and reasoning over graphs with AI. Whether it's visible or abstract, if it has structure, it has a story.",
   title: "Stories in Structure",
   ogImage: "",
@@ -20,4 +20,18 @@ export const SITE = {
   dir: "ltr", // "rtl" | "auto"
   lang: "en", // html lang code. Set this empty and default will be "en"
   timezone: "Europe/Warsaw", // Default global timezone (IANA format) https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+} as const;
+
+/**
+ * Author identity used for JSON-LD (schema.org Person) across the site.
+ * `sameAs` links help search engines tie this site to the same person on
+ * other platforms.
+ */
+export const AUTHOR = {
+  name: SITE.author,
+  url: SITE.profile,
+  id: `${SITE.profile}#person`,
+  sameAs: [
+    "https://www.linkedin.com/in/agatamigalska/",
+  ],
 } as const;

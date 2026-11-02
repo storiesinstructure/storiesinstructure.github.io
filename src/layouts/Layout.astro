@@ -1,7 +1,7 @@
 ---
 import { ClientRouter } from "astro:transitions";
 import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
-import { SITE } from "@/config";
+import { SITE, AUTHOR } from "@/config";
 import "@/styles/global.css";
 
 type Props = {
@@ -14,10 +14,11 @@ type Props = {
   pubDatetime?: Date;
   modDatetime?: Date | null;
   scrollSmooth?: boolean;
+  isProfilePage?: boolean;
 };
 
 const {
-  title = SITE.title,
+  title = `${SITE.title} — ${SITE.author}`,
   author = SITE.author,
   profile = SITE.profile,
   description = SITE.desc,
@@ -26,46 +27,81 @@ const {
   pubDatetime,
   modDatetime,
   scrollSmooth = false,
+  isProfilePage = false,
 } = Astro.props;
 
 const socialImageURL = new URL(ogImage, Astro.url);
 
 const isArticle = !!pubDatetime;
 
-const structuredData = isArticle
-  ? {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      headline: `${title}`,
-      description: `${description}`,
-      image: `${socialImageURL}`,
-      datePublished: `${pubDatetime?.toISOString()}`,
-      ...(modDatetime && { dateModified: modDatetime.toISOString() }),
-      author: [
-        {
-          "@type": "Person",
-          name: `${author}`,
-          ...(profile && { url: profile }),
-        },
-      ],
-      publisher: {
-        "@type": "Organization",
-        name: SITE.title,
-        url: SITE.website,
-      },
-    }
-  : {
-      "@context": "https://schema.org",
-      "@type": "Blog",
-      name: SITE.title,
-      description: SITE.desc,
-      url: SITE.website,
-      author: {
-        "@type": "Person",
-        name: `${author}`,
-        ...(profile && { url: profile }),
-      },
-    };
+// Canonical Person entity for the site owner, referenced by @id elsewhere
+const person = {
+  "@type": "Person",
+  "@id": AUTHOR.id,
+  name: AUTHOR.name,
+  url: AUTHOR.url,
+  sameAs: AUTHOR.sameAs,
+};
+const personRef = { "@id": AUTHOR.id };
+
+const websiteId = `${SITE.website}/#website`;
+const website = {
+  "@type": "WebSite",
+  "@id": websiteId,
+  name: SITE.title,
+  description: SITE.desc,
+  url: SITE.website,
+  inLanguage: SITE.lang || "en",
+  sameAs: ["https://github.com/storiesinstructure"],
+  author: personRef,
+  publisher: personRef,
+};
+
+const authorEntity =
+  author === AUTHOR.name
+    ? personRef
+    : { "@type": "Person", name: author, ...(profile && { url: profile }) };
+
+let pageEntity: Record<string, unknown>;
+if (isArticle) {
+  pageEntity = {
+    "@type": "BlogPosting",
+    headline: title.replace(` | ${SITE.title}`, ""),
+    description: `${description}`,
+    image: `${socialImageURL}`,
+    url: `${canonicalURL}`,
+    mainEntityOfPage: `${canonicalURL}`,
+    datePublished: `${pubDatetime?.toISOString()}`,
+    ...(modDatetime && { dateModified: modDatetime.toISOString() }),
+    author: [authorEntity],
+    publisher: personRef,
+    isPartOf: { "@id": websiteId },
+  };
+} else if (isProfilePage) {
+  pageEntity = {
+    "@type": "ProfilePage",
+    url: `${canonicalURL}`,
+    name: `${title}`,
+    description: `${description}`,
+    mainEntity: personRef,
+    isPartOf: { "@id": websiteId },
+  };
+} else {
+  pageEntity = {
+    "@type": "Blog",
+    name: SITE.title,
+    description: SITE.desc,
+    url: SITE.website,
+    author: personRef,
+    publisher: personRef,
+    isPartOf: { "@id": websiteId },
+  };
+}
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [person, website, pageEntity],
+};
 ---
 
 <!doctype html>
@@ -86,6 +122,7 @@ const structuredData = isArticle
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <meta name="author" content={author} />
+    <link rel="author" href={AUTHOR.url} />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <!-- Open Graph / Facebook -->
